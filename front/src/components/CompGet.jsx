@@ -14,7 +14,6 @@ export default function CompGet() {
         fetchData();
     }, []);
 
-    console.log('list::', list);
     
 
     return (

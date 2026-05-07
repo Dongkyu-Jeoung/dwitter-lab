@@ -21,8 +21,8 @@ export default function CompLogin() {
             alert('비밀번호를 입력해주세요')
         } else {
             console.log('서버전송', form);
-            const jsonData = await postFetchData('/api/post', form);
-            jsonData.result ? alert('전송 성공') : alert('전송 실패');
+            const jsonData = await postFetchData('/users/login', form);
+            jsonData.result ? alert('로그인 성공') : alert('로그인 실패');
         }
     }
 
@@ -36,7 +36,7 @@ export default function CompLogin() {
                     </li>
                     <li>
                         <label htmlFor="pwd">비밀번호</label>
-                        <input type="text" id='pwd' name='pwd' ref={pwdRef} value={form.pwd} onChange={handleFormChange}/>
+                        <input type="password" id='pwd' name='pwd' ref={pwdRef} value={form.pwd} onChange={handleFormChange}/>
                     </li>
                     <li>
                         <button type='submit'>Login</button>
