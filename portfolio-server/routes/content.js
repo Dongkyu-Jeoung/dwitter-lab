@@ -9,6 +9,7 @@ router.get('/skills', controller.getContentSkills);
 router.get('/work', controller.getContentWork);
 router.get('/testimonial', controller.getContentTestimonial);
 
+router.get('/work/project/:pid', controller.getContentWorkProject);
 
 
 

@@ -2,6 +2,8 @@ import * as repository from '../repository/content.js';
 
 const content = repository.getContent();
 
+
+
 export const getContentHome = (req, res) => {
     res.json({"result": content.home});
 }
@@ -20,4 +22,10 @@ export const getContentWork = (req, res) => {
 
 export const getContentTestimonial = (req, res) => {
     res.json({"result": content.testimonials});
+}
+
+export const getContentWorkProject = (req, res, next) => {
+    const pid = req.params.pid;
+    const project = content.work.projects.find(project => project.pid === pid);
+    res.json({"result": project});
 }
