@@ -13,7 +13,10 @@ create table portfolio(
     footer			json,
     create_at		datetime
 );
+
 select * from portfolio;
+
+select work from portfolio;
 
 insert into portfolio(header, home, about, skills, `work`, testimonials, footer, create_at)
 	values(
