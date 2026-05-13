@@ -1,12 +1,8 @@
+import db from '../db/connection.js';
 
-const footer = {
-    "description": "Junior Software Engineer Judy's Portfolio - All right reserved",
-    "list": [
-        {"href": "#", "icon": "github"},
-        {"href": "#", "icon": "linkedin"}
-    ]
-};
+export const getFooter = async() => {
+    const sql = `select footer from portfolio`;
+    const [results] = await db.execute(sql, []);
 
-export const getFooter = () => {
-    return footer;
+    return await results[0].footer;
 }

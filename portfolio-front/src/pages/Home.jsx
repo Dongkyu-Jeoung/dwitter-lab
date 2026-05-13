@@ -16,9 +16,10 @@ export default function Home() {
             setData(jsonData.result);
         }
         const data = fetchData();
+        
     })
 
-    const { img, alt, title, name, description, href, menuName } = data;
+    const { alt, img, href, name, title, menuName, description } = data;
     return (
         <section id="home">
             <AvatarImage img={img}
